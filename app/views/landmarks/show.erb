@@ -2,9 +2,20 @@
   <tr>
     <th>Name</th>
     <th>Year Completed</th>
+    <th>Figure</th>
+    <th>Title</th>
   </tr>
   <tr>
     <td><%= @landmark.name %></td>
     <td><%= @landmark.year_completed %></td>
+    <td><%= @landmark.figure.name%></td>
   </tr>
 <table>
+<form action="/landmarks/<%=@landmark.id%>/edit" method="post">
+  <input type="submit" id="submit" value="edit">
+</form>
+<form action="/landmarks/<%=@landmark.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" id="submit" value="delete">
+
+</form>
