@@ -1,0 +1,5 @@
+<select name="figure[title_ids][]">
+  <% @titles.each do |title| %>
+  <option value="<%= title.id %>"><%= title.name %></option>
+  <% end %>
+</select>
