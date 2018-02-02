@@ -37,5 +37,11 @@ class LandmarksController < ApplicationController
     redirect "/landmarks/#{@landmark.id}"
   end
 
+  delete '/landmarks/:id/delete' do
+    @landmark = Landmark.find(params[:id])
+    @landmark.delete
+    redirect to '/landmarks'
+  end
+
 
 end

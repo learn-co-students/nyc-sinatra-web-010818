@@ -56,4 +56,10 @@ class FiguresController < ApplicationController
     redirect to "figures/#{@figure.id}"
   end
 
+  delete '/figures/:id/delete' do
+    @figure = Figure.find(params[:id])
+    @figure.delete
+    redirect to '/figures'
+  end
+
 end

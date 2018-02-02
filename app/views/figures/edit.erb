@@ -7,21 +7,27 @@
   <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>">
 
   <br></br>
-  <% Landmark.all.each do |landmark| %>
-    <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="<%= landmark.name %>" <%= 'checked' if @figure.landmarks.include?(landmark) %>>
-      <%= landmark.name %>
-      <br>
-    </input>
-  <% end %>
+<table>
+  <tr>
+    <td>
+      <% Landmark.all.each do |landmark| %>
+        <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="<%= landmark.name %>" <%= 'checked' if @figure.landmarks.include?(landmark) %>>
+          <%= landmark.name %>
+          <br>
+        </input>
+          <% end %>
+    </td>
 
-  <br></br>
-  <% Title.all.each do |title| %>
-    <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="<%= title.name %>" <%= 'checked' if @figure.titles.include?(title) %>>
+    <td>
+    <% Title.all.each do |title| %>
+      <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="<%= title.name %>" <%= 'checked' if @figure.titles.include?(title) %>>
       <%= title.name %>
       <br>
-    </input>
-  <% end %>
-
+      </input>
+    <% end %>
+    </td>
+  </tr>
+</table>
   <br></br>
 
   <label>and/or, create a new landmark:</label>

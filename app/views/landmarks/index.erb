@@ -1,5 +1,10 @@
 <h1>Landmarks</h1>
   <% @landmarks.each do |landmark| %>
-    <h3><%= landmark.name %></h3>
-    <h1><%= landmark.year_completed %></h1>
+    <h3>Building: <a href="landmarks/<%= landmark.id %>"> <%= landmark.name %></a>
+    Built: <%= landmark.year_completed %></h3>
   <% end %>
+
+
+  <form action="/figures">
+    <input type="submit" value="Figures">
+  </form>
