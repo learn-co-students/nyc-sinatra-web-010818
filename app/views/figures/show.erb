@@ -1,0 +1,6 @@
+<h3><%=@figure.name%></h3>
+<%if @figure.landmarks != nil%>
+  <%@figure.landmarks.each do |l|%>
+    <%=l.name%>
+  <%end%>
+<%end%>
