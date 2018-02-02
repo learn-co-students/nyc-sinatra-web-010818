@@ -1,0 +1,10 @@
+<h1>Figures</h1>
+  <% @figures.each do |figure| %>
+    <h3> <a href="/figures/<%= figure.id %>"> <%= figure.name %></a></h3>
+  <% end %>
+
+<br></br>
+
+  <form action="/landmarks">
+    <input type="submit" value="Landmarks">
+  </form>

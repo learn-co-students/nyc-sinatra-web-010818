@@ -1,0 +1,31 @@
+<h1><%= @figure.name %></h1>
+  <label>Landmarks:</label>
+  <% @figure.landmarks.each do |landmark| %>
+    <%= landmark.name %>
+  <% end %>
+
+<br></br>
+
+<label>Titles:</label>
+  <% @figure.titles.each do |title| %>
+    <%= title.name %>
+  <% end %>
+
+<br></br>
+
+<form action="/figures/<%= @figure.id %>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+<br>
+
+<form action="/figures/<%= @figure.id %>/edit">
+  <input type="submit" value="Edit">
+</form>
+
+<br>
+
+<form action="/figures">
+  <input type="submit" value="Home">
+</form>
